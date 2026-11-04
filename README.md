@@ -1,0 +1,1 @@
+# Atlas CRM\n\nAplicacao de treinamento em Next.js, Supabase e TypeScript. O codigo e os guias de implementacao serao enviados em uma branch de revisao.
