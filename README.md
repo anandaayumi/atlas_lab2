@@ -1,1 +1,3 @@
-# Atlas CRM\n\nAplicacao de treinamento em Next.js, Supabase e TypeScript. O codigo e os guias de implementacao serao enviados em uma branch de revisao.
+# Atlas CRM
+
+Aplicação de laboratório em Next.js, TypeScript e Supabase. Consulte [05_Laboratorio/README.md](05_Laboratorio/README.md) para configuração, execução e critérios de validação.

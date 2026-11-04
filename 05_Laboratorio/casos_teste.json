@@ -1,0 +1,218 @@
+[
+  {
+    "id": "T01",
+    "cenario": "Aceite correto",
+    "entrada": "E01",
+    "esperado": "Ganho e uma confirmação; delta +43200 em vendas e -43200 em pipeline",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T02",
+    "cenario": "Mesmo message_id novamente",
+    "entrada": "Reexecutar E01",
+    "esperado": "Sem novo ganho, histórico comercial ou resposta",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T03",
+    "cenario": "Novo e-mail repetindo mesmo código/versão",
+    "entrada": "Enviar E01 de novo",
+    "esperado": "Sem novo ganho ou resposta de confirmação",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T04",
+    "cenario": "Aceite condicionado",
+    "entrada": "E02 na proposta 119 ainda aberta",
+    "esperado": "Revisão; proposta e valores preservados",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T05",
+    "cenario": "Código inexistente",
+    "entrada": "E03",
+    "esperado": "Revisão; nenhuma proposta alterada",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T06",
+    "cenario": "Valor divergente",
+    "entrada": "E04",
+    "esperado": "Revisão; nenhum ganho",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T07",
+    "cenario": "Remetente não permitido",
+    "entrada": "E05",
+    "esperado": "Revisão; nenhum ganho nem confirmação",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T08",
+    "cenario": "Versão divergente",
+    "entrada": "E06",
+    "esperado": "Revisão; nenhum ganho",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T09",
+    "cenario": "Instrução maliciosa no corpo",
+    "entrada": "E07",
+    "esperado": "Revisão; nenhuma instrução executada",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T10",
+    "cenario": "Somente pergunta",
+    "entrada": "E08",
+    "esperado": "Revisão; nenhum ganho",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T11",
+    "cenario": "Assunto com Re: ou Fwd:",
+    "entrada": "E09",
+    "esperado": "Ignorar; nenhum efeito comercial",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T12",
+    "cenario": "Validade vencida",
+    "entrada": "Usar proposta 110",
+    "esperado": "Revisão; sem mudar validade automaticamente",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T13",
+    "cenario": "Desconto sem alçada",
+    "entrada": "Usar proposta 109",
+    "esperado": "Revisão; não inventar aprovação",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T14",
+    "cenario": "Margem inferior ao piso",
+    "entrada": "Usar proposta 108",
+    "esperado": "Revisão; nenhum ganho",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T15",
+    "cenario": "Proposta ainda em qualificação",
+    "entrada": "Usar proposta 120",
+    "esperado": "Revisão; não elegível",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T16",
+    "cenario": "Duas execuções concorrentes",
+    "entrada": "Mesmo E01 em paralelo",
+    "esperado": "Uma transação comercial e uma outbox",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T17",
+    "cenario": "Timeout após enviar Gmail",
+    "entrada": "Falha injetada após envio",
+    "esperado": "envio_incerto; reconciliar antes de qualquer repetição",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T18",
+    "cenario": "Falha antes de enviar Gmail",
+    "entrada": "Falha injetada após commit",
+    "esperado": "Ganho mantido; uma outbox retomável",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T19",
+    "cenario": "Usuário A tenta ler B",
+    "entrada": "Usuários separados",
+    "esperado": "Nenhum dado ou alteração de B",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T20",
+    "cenario": "Reimportação após um ganho",
+    "entrada": "Mesmo lote inicial",
+    "esperado": "Não duplica e não reverte o ganho",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T21",
+    "cenario": "Evento autônomo novo",
+    "entrada": "Nova proposta/versão válida após ativação",
+    "esperado": "Executa sem prompt adicional, com registro da tarefa",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T22",
+    "cenario": "Mensagem marcada como lida antes da rotina",
+    "entrada": "E01 ainda não processado",
+    "esperado": "Continua candidata; não depende de is:unread",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T23",
+    "cenario": "Paginação e varredura interrompida",
+    "entrada": "Mais mensagens que uma página",
+    "esperado": "Retoma sem perder ou duplicar; cursor só após persistência",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  },
+  {
+    "id": "T24",
+    "cenario": "Filtro histórico depois do ganho em novembro",
+    "entrada": "Maio a outubro",
+    "esperado": "R$ 2268000 preservado; novembro mostra +43200, meta ausente",
+    "tipo_execucao": "preencher: simulado ou real",
+    "observado": "",
+    "evidencia": ""
+  }
+]
