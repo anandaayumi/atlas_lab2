@@ -14,7 +14,8 @@ export async function proxy(request: NextRequest) {
       values.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
     },
   } });
-  const { data: { claims } } = await supabase.auth.getClaims();
+  const { data } = await supabase.auth.getClaims();
+  const claims = data?.claims;
   if (!claims && request.nextUrl.pathname !== '/login') return NextResponse.redirect(new URL('/login', request.url));
   if (claims && request.nextUrl.pathname === '/login') return NextResponse.redirect(new URL('/', request.url));
   return response;
