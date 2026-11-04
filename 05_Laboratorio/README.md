@@ -7,11 +7,12 @@ Aplicação de treinamento em português para acompanhar propostas B2B. A base d
 - App Router com Next.js 16.4.4, React 19.2.0, TypeScript 5.9.3 e `@supabase/ssr` 0.12.7. Dependências estão fixadas sem intervalos.
 - Login por e-mail e senha do Supabase, sessão em cookies e proteção de rotas por `proxy.ts`.
 - Painel, carteira com busca e filtros, formulário de criação e edição, detalhe e histórico.
-- Migração SQL com isolamento por proprietário (RLS), validação/recalculo no banco e bloqueio de alteração direta para Ganho.
-- O RPC `atlas_registrar_ganho` exige `app_metadata.crm_role` igual a `gerente` ou `administrador`, atualiza a proposta e registra histórico + item pendente de outbox na mesma transação. Não há worker ou envio de e-mail nesta etapa.
-- Exceções comerciais permanecem consultáveis na carteira; as validações de desconto/aprovação e margem ocorrem independentemente.
+- As migrações de núcleo e de privilégios foram aplicadas ao projeto Supabase `atlas_lab2`. RLS está habilitado nas tabelas; grants anônimos foram removidos e os advisors de segurança retornaram sem achados.
+- A função privada de Ganho exige `app_metadata.crm_role` igual a `gerente` ou `administrador`, atualiza a proposta e registra histórico + outbox pendente na mesma transação. Não há worker ou envio de e-mail nesta etapa.
+- Exceções comerciais permanecem consultáveis na carteira; desconto/aprovação e margem são validados separadamente.
+- A branch `codex/atlas-crm-lab` e o PR rascunho #1 estão no GitHub. Os CSVs foram omitidos do repositório.
 
-O workspace não tinha Node.js/npm nem Git no PATH. Por isso não foi possível instalar, executar o build, gerar `package-lock.json`, iniciar o fluxo autenticado ou criar uma branch Git nesta sessão. O repositório GitHub informado está vazio. Nenhuma migração foi aplicada ao Supabase e nenhuma implantação foi feita: `CONFIGURACAO-DA-TURMA.txt` não está no workspace e a conta Vercel conectada não expõe uma equipe/projeto para este CRM.
+Node.js/npm e Git não estão disponíveis neste ambiente. Assim, `package-lock.json`, lint/build e o fluxo autenticado ainda não foram executados. A equipe Vercel conectada ainda precisa conceder acesso a este vínculo MCP. A planilha não foi importada: falta confirmar a configuração segura de e-mail/allowlist prevista no contexto.
 
 ## Requisitos
 
